@@ -1,8 +1,8 @@
 import React from 'react';
-import StackTitleList from '../../components/StackTitleList/StackTitleList';
+import StackList from '../../components/StackList';
 
 const Home = () => {
-	return <StackTitleList />;
+	return <StackList />;
 };
 
 export default Home;
