@@ -1,11 +1,20 @@
 import React from 'react';
-import StackList from '../StackList/StackList';
+import { Route, Switch } from 'react-router-dom';
+import Home from '../../pages/Home';
+import StackPage from '../../pages/StackPage';
+import Header from '../Header';
+import './app.css';
 
 const App = () => {
 	return (
-		<div className="container mt-3">
-			<h2>FlashCard Application</h2>
-			<StackList />
+		<div className="container">
+			<Header />
+			<div className="pages p-2">
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route exact path="/stack" component={StackPage} />
+				</Switch>
+			</div>
 		</div>
 	);
 };
