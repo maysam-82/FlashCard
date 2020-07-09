@@ -1,16 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { setStack } from '../../redux/actions/stack';
 import stacks from '../../data/stacks.json';
 
-const StackTitleList = () => {
+interface IProps {
+	setStack: typeof setStack;
+}
+
+const StackTitleList: React.SFC<IProps> = ({ setStack }) => {
 	const renderStackTitleList = () => {
-		return stacks.map(({ title, id }) => (
-			<Link to="/stack">
-				<h4 key={id}>{title}</h4>
+		return stacks.map((stack) => (
+			<Link to="/stack" key={stack.id} onClick={() => setStack(stack)}>
+				<h4>{stack.title}</h4>
 			</Link>
 		));
 	};
 	return <div>{renderStackTitleList()}</div>;
 };
 
-export default StackTitleList;
+export default connect(null, { setStack })(StackTitleList);
