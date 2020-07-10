@@ -1,0 +1,31 @@
+.card {
+	cursor: pointer;
+	font-size: 1rem;
+}
+
+.card-prompt {
+	width: calc(50% - 1px);
+}
+
+.card-answer {
+	width: calc(50% - 1px);
+}
+
+.text-hidden {
+	visibility: hidden;
+}
+
+.text-revealed {
+	animation-name: fade-in;
+	animation-duration: 1s;
+	visibility: visible;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

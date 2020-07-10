@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { IStoreState } from '../../redux/reducers/index';
 import { IStack } from '../../redux/actions';
+import Card from '../../components/Card';
 
 interface IProps {
 	stack: IStack;
@@ -10,15 +11,13 @@ interface IProps {
 const StackPage: React.SFC<IProps> = ({ stack }) => {
 	const renderCards = () => {
 		return stack.cards?.map(({ prompt, id, answer }) => (
-			<li key={id}>
-				<div>{prompt}</div> <div>{answer}</div>
-			</li>
+			<Card key={id} prompt={prompt} answer={answer} />
 		));
 	};
 	return (
 		<div>
 			<h4>{stack.title}</h4>
-			<ul>{renderCards()}</ul>
+			<div>{renderCards()}</div>
 		</div>
 	);
 };
