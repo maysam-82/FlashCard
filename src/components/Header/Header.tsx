@@ -4,9 +4,12 @@ import './header.css';
 const Header = () => {
 	return (
 		<div className="header position-fixed fixed-top border-bottom d-flex align-items-center justify-content-between">
-			<div className="links">
+			<div className="links d-flex">
 				<Link to="/" className="link">
 					Home
+				</Link>
+				<Link to="/stack-registeration" className="link">
+					New Stack
 				</Link>
 			</div>
 			<h2 className="app-title">FlashCard Application</h2>

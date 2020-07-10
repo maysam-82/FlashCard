@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../../pages/Home';
 import StackPage from '../../pages/StackPage';
+import StackRegister from '../../pages/StackRegister';
 import Header from '../Header';
 import './app.css';
 
@@ -13,6 +14,7 @@ const App = () => {
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/stack" component={StackPage} />
+					<Route exact path="/stack-registeration" component={StackRegister} />
 				</Switch>
 			</div>
 		</div>
