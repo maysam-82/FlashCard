@@ -9,6 +9,7 @@ import {
 import { connect } from 'react-redux';
 import { ICard } from '../../types/card';
 import { addStack } from '../../redux/actions';
+import { RouteComponentProps } from 'react-router-dom';
 interface IState {
 	id: number;
 	title: string;
@@ -19,8 +20,8 @@ interface IProps {
 	addStack: typeof addStack;
 }
 
-class FormStack extends React.Component<IProps, IState> {
-	constructor(props: IProps) {
+class FormStack extends React.Component<IProps & RouteComponentProps, IState> {
+	constructor(props: IProps & RouteComponentProps) {
 		super(props);
 
 		this.state = {
@@ -79,10 +80,14 @@ class FormStack extends React.Component<IProps, IState> {
 	};
 
 	addStackHandler = () => {
-		const id = Date.now();
-		this.setState({ id }, () => {
-			this.props.addStack(this.state);
-		});
+		const { title, cards } = this.state;
+		if (title && cards.length > 0) {
+			const id = Date.now();
+			this.setState({ id }, () => {
+				this.props.addStack(this.state);
+				this.props.history.push('/');
+			});
+		}
 	};
 
 	render() {
