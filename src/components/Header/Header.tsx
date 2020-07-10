@@ -12,7 +12,9 @@ const Header = () => {
 					New Stack
 				</Link>
 			</div>
-			<h2 className="app-title">FlashCard Application</h2>
+			<h2 className="app-title text-right m-0 font-weight-bold">
+				FlashCard Application
+			</h2>
 		</div>
 	);
 };
