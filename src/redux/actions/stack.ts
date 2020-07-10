@@ -1,10 +1,5 @@
 import { ActionTypes } from './actionTypes';
-
-interface ICard {
-	id: number;
-	prompt: string;
-	answer: string;
-}
+import { ICard } from '../../types/card';
 
 export interface IStack {
 	title: string | null;
@@ -20,10 +15,20 @@ export interface ILoadStacks {
 	type: ActionTypes.loadStacks;
 	payload: IStack[];
 }
+export interface IAddStack {
+	type: ActionTypes.addStack;
+	payload: IStack;
+}
 
 export const setStack = (stack: IStack): ISetStack => {
 	return {
 		type: ActionTypes.setStack,
+		payload: stack,
+	};
+};
+export const addStack = (stack: IStack): IAddStack => {
+	return {
+		type: ActionTypes.addStack,
 		payload: stack,
 	};
 };

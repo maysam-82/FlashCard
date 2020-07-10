@@ -1,4 +1,4 @@
-import { IStack, Action, ActionTypes } from '../actions';
+import { IStack, StackAction, ActionTypes } from '../actions';
 
 const INITIAL_STATE: IStack = {
 	title: null,
@@ -6,7 +6,7 @@ const INITIAL_STATE: IStack = {
 	cards: null,
 };
 
-export const stackReducer = (state = INITIAL_STATE, action: Action) => {
+export const stackReducer = (state = INITIAL_STATE, action: StackAction) => {
 	switch (action.type) {
 		case ActionTypes.setStack:
 			const { title, id, cards } = action.payload;
