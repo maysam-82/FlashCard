@@ -16,10 +16,20 @@ export interface ISetStack {
 	type: ActionTypes.setStack;
 	payload: IStack;
 }
+export interface ILoadStacks {
+	type: ActionTypes.loadStacks;
+	payload: IStack[];
+}
 
 export const setStack = (stack: IStack): ISetStack => {
 	return {
 		type: ActionTypes.setStack,
 		payload: stack,
+	};
+};
+export const loadStacks = (stacks: IStack[]): ILoadStacks => {
+	return {
+		type: ActionTypes.loadStacks,
+		payload: stacks,
 	};
 };
