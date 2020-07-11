@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should render Header component correclty 1`] = `
+<div
+  className="header position-fixed fixed-top border-bottom d-flex align-items-center justify-content-between bg-white"
+>
+  <div
+    className="links d-flex"
+  >
+    <Link
+      className="link"
+      to="/"
+    >
+      Home
+    </Link>
+    <Link
+      className="link"
+      to="/stack-registeration"
+    >
+      New Stack
+    </Link>
+  </div>
+  <h2
+    className="app-title text-right m-0 font-weight-bold"
+  >
+    FlashCard Application
+  </h2>
+</div>
+`;
