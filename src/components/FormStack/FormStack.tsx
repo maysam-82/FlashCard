@@ -59,20 +59,25 @@ class FormStack extends React.Component<IProps & RouteComponentProps, IState> {
 		const { cards } = this.state;
 		return this.state.cards.map(({ id }) => {
 			return (
-				<FormGroup key={id} className="border-bottom p-2 mb-2 ">
+				<FormGroup
+					key={id}
+					className="border-bottom p-2 mb-2 d-flex align-items-center"
+				>
 					<FormLabel className="m-0">Prompt:</FormLabel>
 					<FormControl
 						onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
 							this.updateCardHandler(event, id, 'prompt')
 						}
 						value={cards[id].prompt}
+						className="ml-2 mr-4"
 					/>
-					<FormLabel className="m-0 mt-2">Answer:</FormLabel>
+					<FormLabel className="m-0 ml-2">Answer:</FormLabel>
 					<FormControl
 						onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
 							this.updateCardHandler(event, id, 'answer')
 						}
 						value={cards[id].answer}
+						className="ml-2"
 					/>
 				</FormGroup>
 			);
