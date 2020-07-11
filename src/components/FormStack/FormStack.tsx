@@ -7,9 +7,11 @@ import {
 	FormLabel,
 } from 'react-bootstrap';
 import { connect } from 'react-redux';
+import { RouteComponentProps } from 'react-router-dom';
 import { ICard } from '../../types/card';
 import { addStack } from '../../redux/actions';
-import { RouteComponentProps } from 'react-router-dom';
+import { cardVerificationResult } from './formStackUtils';
+
 interface IState {
 	id: number;
 	title: string;
@@ -32,14 +34,16 @@ class FormStack extends React.Component<IProps & RouteComponentProps, IState> {
 	}
 
 	addCardHandler = () => {
-		this.setState((prevState) => {
-			const newCard: ICard = {
-				id: prevState.cards.length,
-				prompt: '',
-				answer: '',
-			};
-			return { cards: [...prevState.cards, newCard] };
-		});
+		if (!cardVerificationResult(this.state.cards)) {
+			this.setState((prevState) => {
+				const newCard: ICard = {
+					id: prevState.cards.length,
+					prompt: '',
+					answer: '',
+				};
+				return { cards: [...prevState.cards, newCard] };
+			});
+		}
 	};
 
 	updateCardHandler = (
@@ -86,7 +90,11 @@ class FormStack extends React.Component<IProps & RouteComponentProps, IState> {
 
 	addStackHandler = () => {
 		const { title, cards } = this.state;
-		if (title && cards.length > 0) {
+		if (
+			title &&
+			cards.length > 0 &&
+			!cardVerificationResult(this.state.cards)
+		) {
 			const id = Date.now();
 			this.setState({ id }, () => {
 				this.props.addStack(this.state);
