@@ -1,10 +1,10 @@
 import React from 'react';
 import './card.css';
-interface IProps {
+export interface IProps {
 	prompt: string;
 	answer: string;
 }
-interface IState {
+export interface IState {
 	isAnswerHidden: boolean;
 }
 
