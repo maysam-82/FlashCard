@@ -12,17 +12,20 @@ import { ICard } from '../../types/card';
 import { addStack } from '../../redux/actions';
 import { cardVerificationResult } from './formStackUtils';
 
-interface IState {
+export interface IState {
 	id: number;
 	title: string;
 	cards: ICard[];
 }
 
-interface IProps {
+export interface IProps {
 	addStack: typeof addStack;
 }
 
-class FormStack extends React.Component<IProps & RouteComponentProps, IState> {
+export class FormStack extends React.Component<
+	IProps & RouteComponentProps,
+	IState
+> {
 	constructor(props: IProps & RouteComponentProps) {
 		super(props);
 
