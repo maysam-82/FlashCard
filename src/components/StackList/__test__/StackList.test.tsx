@@ -3,18 +3,16 @@ import { shallow, ShallowWrapper } from 'enzyme';
 import { StackList, IProps } from '../StackList';
 import { IStack } from '../../../redux/actions';
 
-const stack: IStack = {
+export const testStack: IStack = {
 	id: 500,
 	title: 'test title stack',
 	cards: [{ id: 2, prompt: 'test prompt', answer: 'test answer' }],
 };
 
-const mockSetStack = jest.fn();
-const mockLoadStacks = jest.fn();
 const props: IProps = {
-	setStack: mockSetStack,
-	loadStacks: mockLoadStacks,
-	stacks: [stack],
+	setStack: jest.fn(),
+	loadStacks: jest.fn(),
+	stacks: [testStack],
 };
 
 describe('StackList component', () => {

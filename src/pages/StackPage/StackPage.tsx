@@ -4,13 +4,13 @@ import { IStoreState } from '../../redux/reducers/index';
 import { IStack } from '../../redux/actions';
 import Card from '../../components/Card';
 
-interface IProps {
+export interface IProps {
 	stack: IStack;
 }
 
-const StackPage: React.SFC<IProps> = ({ stack }) => {
+export const StackPage: React.SFC<IProps> = ({ stack }) => {
 	const renderCards = () => {
-		return stack.cards?.map(({ prompt, id, answer }) => (
+		return (stack.cards || []).map(({ prompt, id, answer }) => (
 			<Card key={id} prompt={prompt} answer={answer} />
 		));
 	};
