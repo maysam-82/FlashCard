@@ -11,6 +11,7 @@ import { RouteComponentProps } from 'react-router-dom';
 import { ICard } from '../../types/card';
 import { addStack } from '../../redux/actions';
 import { cardVerificationResult } from './formStackUtils';
+import FormCard from '../FormCard/FormCard';
 
 export interface IState {
 	id: number;
@@ -52,7 +53,7 @@ export class FormStack extends React.Component<
 	updateCardHandler = (
 		event: React.ChangeEvent<HTMLInputElement>,
 		id: number,
-		key: keyof ICard = 'prompt'
+		key: keyof ICard
 	) => {
 		const { value } = event.target;
 		this.setState((prevState) => {
@@ -64,29 +65,15 @@ export class FormStack extends React.Component<
 	};
 	renderCards = () => {
 		const { cards } = this.state;
-		return this.state.cards.map(({ id }) => {
+		return cards.map(({ id }) => {
 			return (
-				<FormGroup
+				<FormCard
+					updateCard={this.updateCardHandler}
+					prompt={cards[id].prompt}
+					answer={cards[id].answer}
+					id={id}
 					key={id}
-					className="border-bottom p-2 mb-2 d-flex align-items-center"
-				>
-					<FormLabel className="m-0">Prompt:</FormLabel>
-					<FormControl
-						onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-							this.updateCardHandler(event, id, 'prompt')
-						}
-						value={cards[id].prompt}
-						className="ml-2 mr-4"
-					/>
-					<FormLabel className="m-0 ml-2">Answer:</FormLabel>
-					<FormControl
-						onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-							this.updateCardHandler(event, id, 'answer')
-						}
-						value={cards[id].answer}
-						className="ml-2"
-					/>
-				</FormGroup>
+				/>
 			);
 		});
 	};
