@@ -3,7 +3,7 @@ import { ICard } from '../../types/card';
 
 export interface IStack {
 	title: string | null;
-	id: number | null;
+	id: number;
 	cards: ICard[] | null;
 }
 

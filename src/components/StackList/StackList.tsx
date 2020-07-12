@@ -5,13 +5,13 @@ import { setStack, loadStacks, IStack } from '../../redux/actions/stack';
 import stacks from '../../data/stacks.json';
 import { IStoreState } from '../../redux/reducers/index';
 
-interface IProps {
+export interface IProps {
 	setStack: typeof setStack;
 	loadStacks: typeof loadStacks;
 	stacks: IStack[];
 }
-
-class StackList extends React.Component<IProps, {}> {
+// using `export` to test disconnected component
+export class StackList extends React.Component<IProps, {}> {
 	componentDidMount() {
 		if (this.props.stacks.length === 0) {
 			this.props.loadStacks(stacks);
@@ -21,12 +21,8 @@ class StackList extends React.Component<IProps, {}> {
 	renderStackList = () => {
 		const { stacks, setStack } = this.props;
 		if (this.props.stacks.length > 0) {
-			return stacks.map((stack, index) => (
-				<Link
-					to="/stack"
-					key={stack.id ? stack.id : index}
-					onClick={() => setStack(stack)}
-				>
+			return stacks.map((stack) => (
+				<Link to="/stack" key={stack.id} onClick={() => setStack(stack)}>
 					<h4>{stack.title}</h4>
 				</Link>
 			));

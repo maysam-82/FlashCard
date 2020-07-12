@@ -2,7 +2,7 @@ import { IStack, StackAction, ActionTypes } from '../actions';
 
 const INITIAL_STATE: IStack = {
 	title: null,
-	id: null,
+	id: 0,
 	cards: null,
 };
 

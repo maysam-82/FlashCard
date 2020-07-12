@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StackList component should render StackList properly 1`] = `
+<div>
+  <Link
+    key="500"
+    onClick={[Function]}
+    to="/stack"
+  >
+    <h4>
+      test title stack
+    </h4>
+  </Link>
+</div>
+`;
