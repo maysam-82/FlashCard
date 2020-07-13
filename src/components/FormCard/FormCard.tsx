@@ -15,10 +15,7 @@ export interface IProps {
 
 const FormCard: React.SFC<IProps> = ({ id, updateCard, prompt, answer }) => {
 	return (
-		<FormGroup
-			key={id}
-			className="border-bottom p-2 mb-2 d-flex align-items-center"
-		>
+		<FormGroup className="border-bottom p-2 mb-2 d-flex align-items-center">
 			<FormLabel className="m-0">Prompt:</FormLabel>
 			<FormControl
 				onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
