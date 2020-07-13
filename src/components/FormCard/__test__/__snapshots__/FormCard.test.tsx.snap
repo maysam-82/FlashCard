@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormCard component should render FormCard 1`] = `
+<FormGroup
+  className="border-bottom p-2 mb-2 d-flex align-items-center"
+>
+  <FormLabel
+    className="m-0"
+    column={false}
+    srOnly={false}
+  >
+    Prompt:
+  </FormLabel>
+  <FormControl
+    className="ml-2 mr-4"
+    onChange={[Function]}
+    value="sample p"
+  />
+  <FormLabel
+    className="m-0 ml-2"
+    column={false}
+    srOnly={false}
+  >
+    Answer:
+  </FormLabel>
+  <FormControl
+    className="ml-2"
+    onChange={[Function]}
+    value="sample a"
+  />
+</FormGroup>
+`;
