@@ -19,12 +19,16 @@ exports[`StackPage component should render StackPage correctly 1`] = `
   <h4>
     test title stack
   </h4>
-  <div>
-    <Card
-      answer="test answer"
-      key="2"
-      prompt="test prompt"
-    />
-  </div>
+  <Cards
+    cards={
+      Array [
+        Object {
+          "answer": "test answer",
+          "id": 2,
+          "prompt": "test prompt",
+        },
+      ]
+    }
+  />
 </div>
 `;

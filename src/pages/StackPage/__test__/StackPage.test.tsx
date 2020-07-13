@@ -12,15 +12,15 @@ describe('StackPage component', () => {
 		expect(component).toMatchSnapshot();
 	});
 	it('should render 1 Card component', () => {
-		expect(component.find('Card').length).toEqual(1);
+		expect(component.find('Cards').length).toEqual(1);
 	});
 	describe('When there is no `card` in `stack.cards`', () => {
 		beforeEach(() => {
 			component = shallow(<StackPage stack={testStack} />);
 			component.setProps({ stack: { ...testStack, cards: [] } });
 		});
-		it('should render no Card', () => {
-			expect(component.find('Card')).toHaveLength(0);
+		it('should render no Cards', () => {
+			expect(component.find('Cards')).toHaveLength(0);
 		});
 	});
 });
