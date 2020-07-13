@@ -13,7 +13,7 @@ export const StackPage: React.SFC<IProps> = ({ stack }) => {
 	return (
 		<div>
 			<h4>{title}</h4>
-			{cards.length > 0 ? <Cards cards={stack.cards} /> : null}
+			{cards.length > 0 ? <Cards cards={cards} /> : null}
 		</div>
 	);
 };

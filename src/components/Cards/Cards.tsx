@@ -2,7 +2,7 @@ import React from 'react';
 import Card from '../Card';
 import { ICard } from '../../types/card';
 
-interface IProps {
+export interface IProps {
 	cards: ICard[];
 }
 const Cards: React.SFC<IProps> = ({ cards }) => {
