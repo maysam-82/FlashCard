@@ -9,10 +9,11 @@ export interface IProps {
 }
 
 export const StackPage: React.SFC<IProps> = ({ stack }) => {
+	const { cards, title } = stack;
 	return (
 		<div>
-			<h4>{stack.title}</h4>
-			{stack.cards ? <Cards cards={stack.cards} /> : null}
+			<h4>{title}</h4>
+			{cards.length > 0 ? <Cards cards={stack.cards} /> : null}
 		</div>
 	);
 };
