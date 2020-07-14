@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormStack component should render FormStack 1`] = `
+<div
+  className="form-stack-container"
+>
+  <Form
+    className="p-2 border-bottom mb-2"
+    inline={true}
+  >
+    <FormGroup
+      className="mb-2"
+    >
+      <FormLabel
+        className="mr-2"
+        column={false}
+        srOnly={false}
+      >
+        Title:
+      </FormLabel>
+      <FormControl
+        onChange={[Function]}
+        placeholder="Enter title of card"
+        value=""
+      />
+    </FormGroup>
+  </Form>
+  <div
+    className="cards-list"
+  />
+  <Button
+    active={false}
+    className="ml-2"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+    variant="primary"
+  >
+    Add Card
+  </Button>
+  <Button
+    active={false}
+    className="ml-2 bg-success"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+    variant="primary"
+  >
+    Save And Add Stack
+  </Button>
+</div>
+`;
