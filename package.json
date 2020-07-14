@@ -59,7 +59,10 @@
 			"src/**/*.tsx",
 			"src/**/*.ts",
 			"!src/index.tsx",
-			"!src/**/*.d.ts"
+			"!src/**/*.d.ts",
+			"!src/redux/actions/actionTypes.ts",
+			"!src/redux/actions/index.ts",
+			"!src/redux/reducers/index.ts"
 		]
 	}
 }
