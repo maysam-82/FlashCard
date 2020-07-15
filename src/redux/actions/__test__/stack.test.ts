@@ -1,7 +1,7 @@
 import * as stack from '../stack';
-import { testStack } from '../../../components/StackList/__test__/StackList.test';
 import { ActionTypes } from '../actionTypes';
-const testStacks = [testStack, testStack];
+import { testStack, testStacks } from '../../../fixtures/testData/testData';
+
 describe('action creators', () => {
 	it('should create an action to set the main stack', () => {
 		const expectedAction = {
