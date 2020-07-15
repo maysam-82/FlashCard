@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { StackPage } from '../StackPage';
-import { testStack } from '../../../components/StackList/__test__/StackList.test';
+import { testStack } from '../../../fixtures/testData/testData';
 
 describe('StackPage component', () => {
 	let component: ShallowWrapper;

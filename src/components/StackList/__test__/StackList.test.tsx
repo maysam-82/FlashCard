@@ -1,13 +1,7 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { StackList, IProps } from '../StackList';
-import { IStack } from '../../../redux/actions';
-
-export const testStack: IStack = {
-	id: 500,
-	title: 'test title stack',
-	cards: [{ id: 2, prompt: 'test prompt', answer: 'test answer' }],
-};
+import { testStack } from '../../../fixtures/testData/testData';
 
 const props: IProps = {
 	setStack: jest.fn(),
