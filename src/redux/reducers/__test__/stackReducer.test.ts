@@ -1,4 +1,4 @@
-import { stackReducer } from '../stackReducer';
+import stackReducer from '../stackReducer';
 import { setStack, StackAction } from '../../actions';
 import { testStack } from '../../../fixtures/testData/testData';
 

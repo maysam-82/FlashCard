@@ -6,7 +6,7 @@ const INITIAL_STATE: IStack = {
 	cards: [],
 };
 
-export const stackReducer = (state = INITIAL_STATE, action: StackAction) => {
+const stackReducer = (state = INITIAL_STATE, action: StackAction) => {
 	switch (action.type) {
 		case ActionTypes.setStack:
 			const { title, id, cards } = action.payload;
