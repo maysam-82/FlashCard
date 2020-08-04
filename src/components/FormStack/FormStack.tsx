@@ -97,7 +97,7 @@ export class FormStack extends React.Component<
 		const { title } = this.state;
 		return (
 			<div className="form-stack-container">
-				<Form inline className="p-2 border-bottom mb-2">
+				<Form inline className="p-2 border-bottom mb-2" onSubmit={(event:React.FormEvent<HTMLFormElement>)=>event.preventDefault()}>
 					<FormGroup className="mb-2">
 						<FormLabel className="mr-2">Title:</FormLabel>
 						<FormControl
